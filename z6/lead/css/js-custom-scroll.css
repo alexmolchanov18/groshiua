@@ -1,0 +1,23 @@
+.js-scroll-container {
+  overflow: hidden !important;
+  position: relative; }
+  .js-scroll-container > .js-scrollbar-y-wrap {
+    display: none;
+    background-color: transparent;
+    width: 8px;
+    background-color: #d7d7d7;
+    opacity: 1;
+    position: absolute;
+    transition: background-color .2s linear, opacity .2s linear;
+    right: 0; }
+    .js-scroll-container > .js-scrollbar-y-wrap > .js-scrollbar-y {
+      position: absolute;
+      border-radius: 8px;
+      transition: background-color .2s linear, height .2s linear;
+      background-color: #aaa;
+      right: 0;
+      width: 8px; }
+    .js-scroll-container > .js-scrollbar-y-wrap:hover > .js-scrollbar-y, .js-scroll-container > .js-scrollbar-y-wrap:active > .js-scrollbar-y {
+      background-color: #6387df; }
+
+/*# sourceMappingURL=js-custom-scroll.css.map*/
