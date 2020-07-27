@@ -1,71 +1,53 @@
-$('#brands').bxSlider({
-minSlides : 2,
-maxSlides : 6,
-slideWidth : 160,
-slideMargin : 10,
-auto : true
-});
+$(function(){
 
-$(window).on('activate.bs.scrollspy', function(e) {
-var $hash, $node;
-$hash = $("a[href^='#']", e.target).attr("href").replace(/^#/, '');
-$node = $('#' + $hash);
-if ($node.length) {
-$node.attr('id', '');
-}
+    	$(function(){
+    		$('.slider-1').slider({
+			  animate: 600,
+			  max: 15000,
+			  min: 500,
+			  step:100,
+			  slide: function(event, ui) {    
+			    $('.amount_slider').text( ui.value );
+			    $(ui.value).val($('.amount_slider').text());
+			    // $(function() {
+			    //     calculate();
+			    // });
+			    var $Handle = $('.slider-1').find('.ui-slider-handle');
+			    $Handle.css('margin-left', -1 * $Handle.width() * ($('.slider-1').slider('value') / $('.slider-1').slider('option', 'max')));
+			  }
+			});
+			$('.amount_slider').change(function() {
+			    $('.slider-1').slider("value" , $(this).val())
+			});
+			$('.slider-2').slider({
+			  animate: 600,
+			  max: 15,
+			  min:5,
+			  step: 1,
+			  slide: function(event, ui) {    
+			    $('.days_amount').text( ui.value );
+			    $(ui.value).val($('.days_amount').text());
+			    var $Handle = $('.slider-2').find('.ui-slider-handle');
+			    $Handle.css('margin-left', -1 * $Handle.width() * ($('.slider-2').slider('value') / $('.slider-2').slider('option', 'max')));
+			  }
+			});
+			$('.cpc').change(function() {
+			    $('.slider-2').slider("value" , $(this).val())
+			});
 
-document.location.hash = $hash;
-if ($node.length) {
-return $node.attr('id', $hash);
-}
-});
-
-$("a[href^='#']:not('.tbs, .carousel-control, .scrollup, .rdr')").on('click', function(e) {
-e.preventDefault();
-var hash = this.hash;
-var y = $(hash).offset().top-80;
-$('html, body').animate({
-scrollTop : y
-}, 300);
-return false;
-});
-
-$(window).scroll(function() {
-if ($(this).scrollTop() > 100) {
-$('.scrollup').fadeIn();
-$('nav').addClass('scrolled');
-} else {
-$('.scrollup').fadeOut();
-$('nav').removeClass('scrolled');
-}
-});
-
-$('.scrollup').click(function() {
-$("html, body").animate({
-scrollTop : 0
-}, 600);
-return false;
-});
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-});
-
-
-$(window).load(function() {
-      jQuery("#status").fadeOut();
-      jQuery("#preloader").delay(500).fadeOut("fast");
     });
-    
-    
-$('a').click(function() {
-	url = $(this).data('href');
-	if (url !== undefined) {
-		window.open(url);
-		return false;
-	}
-}); 
 
-$('ul.nav.navbar-nav > li > a, a.navbar-brand.home').click(function(){
-	$('button.navbar-toggle').not('.collapsed').click();
+     $(".phone").mask("+380 (99) 999-99-99");
+     $(".phone").keyup(function(){
+    		let lnph = $(".phone").val().length;
+    		// console.log(lnph)
+    		if(lnph == 19){
+                $(".submit_button").prop("disabled","false");
+                $(".submit_button").removeAttr("disabled");
+                $(".submit_button").text("Отправить");
+            }else{
+                $(".submit_button").prop("disabled","true");
+                $(".submit_button").text("Введите данные");
+            }
+    	});
 });

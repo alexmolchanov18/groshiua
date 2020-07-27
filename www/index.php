@@ -1,74 +1,15 @@
-<?php
-$promo = $_GET['promo'];
-$source = $_GET['source'];
-$campaign = $_GET['campaign'];
-$tid1 = $_GET['TID1'];
-$tid2 = $_GET['TID2'];
-$aid = $_GET['aid'];
-if($aid == ''){
-    $aid = '63223';
-}
-$aid = intval($aid);
-
-$source = ''.$_GET['utm_source'];
-$campaign = ''.$_GET['utm_campaign'];
-$promo = ''.$_GET['utm_medium'];
-$tid1 = ''.$_GET['utm_content'];
-$tid2 = ''.$_GET['utm_term'];
-
-/*$category = $_GET["utm_term"];
-$price = $_GET["utm_content"];
-if (($category != '') && ($price != '')) {
-$add_link = "&tid1=" . $category . "&tid2=" . $price;
-} */
-// url +, cookie-
-// url +, cookie +
-if( $aid != '' ) {
-$add_link = "&promo=" . $promo . "&campaign=" . $campaign . $tid1. "&tid2=" . $tid2;
-$params = array($aid, $promo, $campaign, $source, $tid1, $tid2);
-setcookie('zaimdozp', serialize($params), time()+31536000);
-}
-// url -, cookie+
-if($aid == '' && $_COOKIE['zaimdozp']) {
-$params = unserialize($_COOKIE['zaimdozp']);
-$aid = $params[0];
-$promo = $params[1];
-$campaign = $params[2];
-$source = $params[3];
-$tid1 = $params[4];
-$tid2 = $params[5];
-$add_link = "&promo=" . $promo . "&campaign=" . $campaign . "&tid1=". $tid1. "&tid2=" . $tid2;
-}
-// url -, cookie-
-if( ($aid == '') && ($_COOKIE['zaimdozp'] == '') ) {
-$aid = '63223';
-$promo = 'ABD';
-$campaign = 'Abd';
-$tid1 = 'aBd';
-$tid2 = 'aBd';
-$add_link = "&promo=" . $promo . "&campaign=" . $campaign . "&tid1=". $tid1. "&tid2=" . $tid2;
-}
-?>
-<!doctype html> <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-	<!--<![endif]-->
-	<head>
-        
-
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>GroshiUA — сравнение кредитов онлайн</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GroshiUA — сравнение кредитов онлайн</title>
 		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="css/main.css">
-        
-
-<!-- Facebook Pixel Code -->
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/jquery-ui.css">
+	<link rel="stylesheet" href="/css/offers.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<!-- Facebook Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -103,2162 +44,506 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   });
 </script>
 
-        
-<!--esputnik-->        
-<!-- <script>
-	(function(i,s,o,g,r,a,m){
-	i["esSdk"] = r;
-	i[r] = i[r] || function() {
-		(i[r].q = i[r].q || []).push(arguments)
-	}, a=s.createElement(o), m=s.getElementsByTagName(o)[0]; a.async=1; a.src=g;
-	m.parentNode.insertBefore(a,m)}
-	) (window, document, "script", "https://esputnik.com/scripts/v1/public/scripts?apiKey=eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI0NTI0ZWZhYTJkYzI2MGRmYTM4YTE1NDBlMWIzYWQ0ZWNjYjkyNzE3MzI0MGQzOWQwOThhNTM3ZWRlODY1ZjA5MjliNGYxMzQ0OWE1ZTMyMzJjMGEzMGU1ZDA2YTk4NDYwM2VmZjc1YTEwNjkyOWU2Y2E2NDUyOWI2MzVmYmM0NGE4ZDZiZDcxNzUyMDI0MjlmMTczYmEyNWI2ODI0YTEwMWI5OWEwY2RjNTRmNzM1NGYzMDdhZDk2OTVhODg2ODAyYjI5YjEyYWNmYmUifQ.KXkzthLfY2OdEAK4lPQ1wiZxOoysXaqm0jcmjesvTVXA589hWYUPR4rr9B9RAz5kkhkUcUs5wf7xAoAXEnXUOA&domain=19B8CB3D-77AC-4315-B436-6C9FBF6CBCB3", "es");
-	es("pushOn");
-</script> -->
-  
-	</head>
-	<body style="background-color:#eeeeee"  data-spy="scroll" data-target="#navbar">
-		<!-- Google Tag Manager (noscript) -->
+</head>
+<body>
+	<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PD6QTP8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-		<a name="home" id="home"></a>
-		<!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
-		
-		<nav class="navbar navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand home" href="#home"><img src="img/logo.png" alt="GroshiUA"></a>
+	<header>
+		<div class="wrapper">
+			<div class="logo">
+				<img src="/img/Logo.png" alt="">
+			</div>
+			<div class="logo_text">Groshi UA </div>
+		</div>
+	</header>
+	<main>
+		<div class="entry-content">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" class="offer yellow">
+				<div class="offer_logo">
+					<img src="/img/miloan.svg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
 				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav pull-right">
-						<li style="display: none;">
-							<a href="#home"></a>
-						</li>
-						<li>
-							<a href="#credits"><i class="fa fa-money" aria-hidden="true"></i> Кредит онлайн</a>
-						</li>
-						<li>
-							<a href="#conditions"><i class="fa fa-check-square-o" aria-hidden="true"></i> Условия получения кредита</a>
-						</li>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">15 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0,01%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">5 мин.</li>
 					</ul>
 				</div>
-			</div>
-		</nav>
-		<!--<div class="block green">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						<img src="img/1select.svg" alt="Выбрать организацию и ;нажать получить деньги" />
-						<h4>Выбрать организацию
-						<br />
-						и&nbsp;нажать «Получить займ»</h4>
-						<p>
-							Отправка в несколько организаций повышает шанс на получение кредита.
-						</p>
-					</div>
-					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						<img src="img/2wait.svg" alt="Дождаться решения по заявке/звонку оператора" />
-						<h4>Дождаться решения
-						<br />
-						по&nbsp;заявке/звонку оператора</h4>
-						<p>
-							Решение выносится в&nbsp;течении 5-10 минут.
-						</p>
-					</div>
-					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-						<img src="img/3get.svg" alt="Получить<br />деньги" />
-						<h4>Получить
-						<br />
-						деньги</h4>
-						<p>
-							на карту или наличными в отделении банка.
-						</p>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" class="offer yellow">
+				<div class="offer_logo">
+					<img src="/img/schvidko.jpeg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
 					</div>
 				</div>
-			</div>
-		</div>-->
-		<div class="container">
-			<div id="credits" class="block" data-offset="120">
-				<h3 class="center"><img class="title-img" src="img/title-credits.svg" /> Мы подобрали для вас самые выгодные кредиты</h3>
-				<h4 class="center decor">Больше заполненных заявок — выше шанс получить деньги!</h4>
-				<div class="cases zerro">
-
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/miloan.svg" alt="mycredit" /></a>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">20 000 грн.</div>
 					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0,01%</div>
 					</div>
 				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/schvidko.jpeg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							2%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/mazila.jpg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases zerro">
-
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/miloan.svg" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1986?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/CCLoan.png" alt="Credit Kasa" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate45" data-toggle="tooltip" data-placement="top" title="Рейтинг: 4.5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-27<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							8<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1986?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1914?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/monetka.svg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1914?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/schvidko.jpeg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							2%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/mazila.jpg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1509?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img alt="AlexCredit" src="img/logo-alexcredit.png"></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1509?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1844?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/creditplus.svg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1844?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				
-				
-				
-				
-				
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/schvidko.jpeg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							2%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				
-				<!-- <div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/miloan.svg" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				
-				
-				<!-- 
-				<div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/miloan.svg" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/2561?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/safezaim.jpg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/2561?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/miloan.svg" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				<!-- <div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/e-cash-logo.png" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				<!-- 
-				 -->
-				
-				
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/schvidko.jpeg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							2%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				<!-- 
-				<div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/2099?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/credit7.png" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/2099?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/2606?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/zecredit.png" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							10.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/2606?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				
-				
-				<!--  -->
-				<!-- <div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/miloan.svg" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/schvidko.jpeg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							2%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				<!--  -->
-				
-				
-				
-				<!-- <div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/miloan.svg" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/schvidko.jpeg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							2%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				<!--  -->
-				
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/dinero.png" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/schvidko.jpeg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							2%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				 -->
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/ukrpozika.png" alt="Credit Kasa" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate45" data-toggle="tooltip" data-placement="top" title="Рейтинг: 4.5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-27<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							8<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/gotivochka.svg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							20.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				<!--  -->
-                  <!-- ШвидкоГрошi -->
-				<!-- <div class="cases recomend">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/mistercash.svg" alt="ШвидкоГрошi" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							10.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							2%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							10<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="https://www.prtslinprtslink.com/in/offer/1712?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-				
-                <!--  -->
-				<!--  -->
-
-                 <!-- Miloan -->
-
-                 <!-- CreditKasa -->  
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/2486?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/logo-creditkasa.png" alt="Credit Kasa" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate45" data-toggle="tooltip" data-placement="top" title="Рейтинг: 4.5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-27<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							10.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							8<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/2486?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> 
- -->
-                
-
-				<!-- Case: creditplus -->
-				<!-- <div class="cases st0">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1844?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/logo-creditplus.svg" alt="creditplus" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate45" data-toggle="tooltip" data-placement="top" title="Рейтинг: 4.5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							3-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							10.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1844?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-
-				
-
-				<!-- Case 1: Moneyveo -->
-				
-                  
-				<!-- <div class="cases zerro">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/miloan.svg" alt="mycredit" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							12.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-                <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1411?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/gotivochka.svg" alt="Moneyveo" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5.0"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-31<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							10.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							5<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1411?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/2486?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/logo-creditkasa.png" alt="Credit Kasa" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate45" data-toggle="tooltip" data-placement="top" title="Рейтинг: 4.5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-27<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							10.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							8<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/2486?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-
-				  
-				
-				<!-- dinero -->
-
-				<!-- <div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1571?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/dinero.png" alt="dinero" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							23.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							15<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1571?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div> -->
-					
-
-
-                  
-              
-     <!-- miloan 
-				<div class="cases">
-					<div class="cases-logo">
-						<a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img src="img/logo-miloan.svg" alt="Miloan" /></a>
-					</div>
-					<div>
-						<p class="thead">
-							Рейтинг
-						</p>
-						<div class="rate rate5" data-toggle="tooltip" data-placement="top" title="Рейтинг: 5"></div>
-					</div>
-					<div>
-						<p class="thead">
-							На срок
-						</p>
-						<p class="term">
-							1-30<span>дней</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Максимальная сумма
-						</p>
-						<p class="max-sum">
-							15.000<span>грн</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Ставка
-						</p>
-						<p class="term">
-							0%<span>в день</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Рассмотрение
-						</p>
-						<p class="term">
-							10<span>минут</span>
-						</p>
-					</div>
-					<div>
-						<p class="thead">
-							Способ получения
-						</p>
-						<div class="receipt"><img src="img/ico-bank.png" alt=""/><img src="img/ico-card.png" alt=""/>
-						</div>
-					</div>
-					<div class="go">
-						<a href="#" data-href="//go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank" class="rdr btn btn-success">Полу&shy;чить займ <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
-                
-                -->
-                
-              
-
-		
-			<p id="conditions" class="justify">
-				<strong>Мы собрали лучшие предложения кредитных организаций и банков Украины. Осталось выбрать то, что вам подходит. Быстро получить кредит иногда единственная возможность решить сложные финансовые проблемы. Микрозайм даст возможность доделать затянувшийся ремонт, отлично отдохнуть во время отпуска или же поправить собственное здоровье. Как распорядиться суммой – дело получателя, главное – вовремя вернуть занятые деньги.</strong>
-			</p>
-			<div id="tabs">
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active">
-						<a class="tbs" href="#credit-info" aria-controls="credit-info" role="tab" data-toggle="tab"><img src="img/credit-info.svg" alt="Суть кредитования"/> Суть кредитования</a>
-					</li>
-					<li role="presentation">
-						<a class="tbs" href="#credit-conditions" aria-controls="credit-conditions" role="tab" data-toggle="tab"><img src="img/credit-conditions.svg" alt="Условия кредитования"/> Условия получения микрозайма</a>
-					</li>
-					<li role="presentation">
-						<a class="tbs" href="#credit-online" aria-controls="credit-online" role="tab" data-toggle="tab"><img src="img/credit-online.svg" alt="Условия кредитования"/> Онлайн-оформление микрозайма</a>
-					</li>
-				</ul>
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div role="tabpanel" class="tab-pane fade in active" id="credit-info">
-						<h4>Cуть кредитования</h4>
-						<p>
-							О возможности получения микрокредита сегодня известно практически каждому. В этом нет ничего удивительного, ведь рекламу о денежных займах можно увидеть всюду. Теперь нет необходимости тратить время на просиживание очередей в банках, ведь существует множество финансовых организаций, которые могут дать микрозайм каждому гражданину Украины.
-						</p>
-						<p>
-							Несмотря на то, что подобные займы доступны совсем недавно, они уже успели стать популярными среди населения. Большой особенностью является и то, что для получения нужной суммы достаточно всего лишь подать заявку и подождать несколько часов. С большой вероятностью вам будет дан положительный ответ, ведь, как правило, подобные микрофинансовые организации всегда принимают положительное решение. Теперь внезапно возникнувшие проблемы можно решить с помощью подобной финансовой организации и полученного там кредита.
-						</p>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="credit-conditions">
-						<h4>Условие получения микрозайма</h4>
-						<p>
-							В отличие от кредитования в банках, вам не понадобится собирать огромный пакет документов. В большинстве случаев нужно предоставить всего лишь паспорт и идентификационный код. Их достаточно для оформления в МФО заявки для получения средств в долг. Процедура занимает всего несколько часов, после чего вы сможете получить деньги в свое распоряжение.
-						</p>
-						<p>
-							<strong>При получении небольшого кредита в МФО можно рассчитывать на такие преимущества:</strong>
-						</p>
-						<ul>
-							<li>
-								Нет необходимости собирать большой пакет документов;
-							</li>
-							<li>
-								Заявка рассматривается в течение нескольких часов;
-							</li>
-							<li>
-								Нет лишних требований – без справки о доходах, поручителей;
-							</li>
-							<li>
-								Нет лишних комиссий – все просто и понятно.
-							</li>
-						</ul>
-						<p>
-							Подобные условия позволяют в краткий срок решить свои проблемы, а также погасить свою задолженность без проблем. Сделать это можно любым удобным для вас способом.
-						</p>
-						<p>
-							<strong>Осуществить платеж можно такими путями:</strong>
-						</p>
-						<ul>
-							<li>
-								Посетив офис организации;
-							</li>
-							<li>
-								Через банковский перевод;
-							</li>
-							<li>
-								Электронными платежами и т.д.
-							</li>
-						</ul>
-						<p>
-							Важно учитывать, что при микрокредитовании устанавливается определенная плата за пользование наличными, полученными в МФО. Главное – вовремя погасите необходимую сумму, указанную в условиях, иначе микрофинансовая организация может ввести штрафы и наказать комиссией, что значительно повлияет на сумму вашего долга.
-						</p>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="credit-online">
-						<h4>Онлайн-оформление микрозайма</h4>
-						<p>
-							Уровень современного развития позволяет получить потребительский кредит от МФО даже не выходя из дома. Перечень условий при этом не меняется, а выплаты производятся на банковскую карту.
-						</p>
-						<p>
-							На нашем сайте groshiua.online вы можете найти информацию о существующих МФО на территории Украины, условиях получения там займа, контактные телефоны и адреса. Это удобный сервис, способный сэкономить ваше время. На рассмотрение заявки, поданной в онлайн режиме, уходит от 15 минут до нескольких часов, после чего деньги будут зачислены на карту. Отказ практически невозможен, ведь большинство компаний работают со студентами, пенсионерами и даже людьми из черных банковских списков.
-						</p>
-						<p>
-							Решив проблемы, поспешите вернуть заём – чем быстрее вы это сделаете, тем меньше процентов вам насчитают.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- <div id="partners">
-			<div class="container">
-				<div class="brands">
-					<ul class="responsive item" id="brands">
-						<li><a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/250?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img alt="Moneyveo" src="img/logo-moneyveo.png" /></a></li>
-                        <li><a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1571?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img alt="Dinero" src="img/logo-dinero.png" /></a></li>
-                        <li><a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1492?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img alt="CreditKasa" src="img/logo-creditkasa.png" /></a></li>
-						<li><a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1509?aid=63223&source=fb" onclick="fbq('track', 'Lead');" target="_blank"><img alt="AlexCredit" src="img/logo-alexcredit.png" /></a></li>
-                        <li><a class="rdr" href="#" data-href="//go.salesdoubler.net/in/offer/1556?aid=63223&source=fb" onclick="fbq('track', 'Lead');" onclick="fbq('track', 'Lead');" target="_blank"><img alt="Cash in Sky" src="img/logo-cashinsky.png" /></a></li>
-                        
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">5 мин.</li>
 					</ul>
 				</div>
-			</div>
-		</div> -->
-		<div class="block black">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h4>Пользователи, которые нам доверяют: </h4>
-						<div id="count">
-							<span>5</span>
-							<span>3</span>
-							<span>2</span>
-							<span>1</span>
-							<span>2</span>
-							<span>5</span>
-						</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1712?aid=63223&source=fb" class="offer green">
+				<div class="offer_logo">
+					<img src="/img/mazila.jpg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
 					</div>
 				</div>
-			</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">8 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">20 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" class="offer yellow">
+				<div class="offer_logo">
+					<img src="/img/miloan.svg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">15 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0,01%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">5 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			
+			
+			
+			
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1986?aid=63223&source=fb" class="offer green">
+				<div class="offer_logo">
+					<img src="/img/CCLoan.png" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">20 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">20 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1914?aid=63223&source=fb" class="offer green">
+				<div class="offer_logo">
+					<img src="/img/monetka.svg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">9 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">10 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" class="offer yellow">
+				<div class="offer_logo">
+					<img src="/img/schvidko.jpeg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">20 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0,01%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">5 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1712?aid=63223&source=fb" class="offer green">
+				<div class="offer_logo">
+					<img src="/img/mazila.jpg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">8 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">20 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<!-- <a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/250?aid=63223&source=fb" class="offer green">
+				<div class="offer_logo">
+					<img src="/img/moneyveo.svg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">20 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">20 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/2433?aid=63223&source=fb" class="offer green">
+				<div class="offer_logo">
+					<img src="/img/mistercash.svg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">20 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">20 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" class="offer yellow">
+				<div class="offer_logo">
+					<img src="/img/miloan.svg" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">15 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0,01%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">5 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a>
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1986?aid=63223&source=fb" class="offer green">
+				<div class="offer_logo">
+					<img src="/img/CCLoan.png" alt="">
+					<div class="star_block">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+						<img src="/img/star.svg" alt="">
+					</div>
+				</div>
+				<div class="offer_info_wrap">
+					<div class="offer_info">
+						<div class="offer_info_title">Сумма:</div>
+						<div class="offer_info_description">20 000 грн.</div>
+					</div>
+					<div class="offer_info">
+						<div class="offer_info_title">Ставка:</div>
+						<div class="offer_info_description">0%</div>
+					</div>
+				</div>
+				<div class="details_block">
+					<ul>
+						<li><img src="/img/dollar.svg" alt="">На карту</li>
+						<li><img src="/img/clock.svg" alt="">20 мин.</li>
+					</ul>
+				</div>
+				<div class="offer_button">Получить деньги</div>
+			</a> -->
+			
+			
+			
 		</div>
-		<footer style="background-color:#006caa;">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-						<a class="home" href="#home"><img src="img/white-logo.png" alt="GroshiUA" /></a>
-					</div>
-					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-						<p style="color:white;" class="small">
-                            <b>Все указанные условия носят информационно-ознакомительный характер и не  являются публичной офертой, а также есть интеллектуальной собственностью, попадя под защиту закона «Об авторском праве».</b>
-						</p>
-					</div>
-				</div>
+		<div class="wrapper text justify">
+            <div class="review_block">
+                <div class="review_block_title">CreditPlus</div>
+                <div class="rewiew_block_info blue">Адрес: 04107, г. Киев, ул. Багговутовская 23</div>
+                <div class="rewiew_block_info">телефон службы поддержки: 044 337 29 28</div>
+                <div class="rewiew_block_info blue">e-mail службы поддержки: info@creditplus.ua</div>
+                <div class="rewiew_block_info">номер лицензии: ФК №870 от 28.02.2017</div>
+                <div class="rewiew_block_info blue">APR (годовая процентная ставка): 657%</div>
+                <div class="rewiew_block_info">Срок: от 91 до 365 дней</div>
+                <div class="rewiew_block_info blue">Пример расчета: при кредите в 1000 грн., сроком на 91 дня, сумма к оплате составит 1116 грн. Ставка 1,8 % в день (18 гривен в день)</div>
+            </div>
+            <div class="review_block">
+                <div class="review_block_title">credit7</div>
+                <div class="rewiew_block_info blue">Адрес: 01030, Киев, ул. Леонтовича 7</div>
+                <div class="rewiew_block_info">телефон службы поддержки: 0 800 33 07 33</div>
+                <div class="rewiew_block_info blue">e-mail службы поддержки: info@credit7.ua</div>
+                <div class="rewiew_block_info">номер лицензии: НКФП № 529 от 04.04.2019г.</div>
+                <div class="rewiew_block_info blue">APR (годовая процентная ставка): 693,5%</div>
+                <div class="rewiew_block_info">Срок: от 91 до 365 дней</div>
+                <div class="rewiew_block_info blue">Пример расчета: при кредите в 1000 грн., сроком на 91 дня, сумма к оплате составит 1178 грн. Ставка 1,9 % в день (19 гривен в день)</div>
+            </div>
+            <div class="review_block">
+                <div class="review_block_title">Mycredit</div>
+                <div class="rewiew_block_info blue">Адрес: 01011,  Киев, площадь Арсенальная, д. 1Б</div>
+                <div class="rewiew_block_info">телефон службы поддержки: 0 800 214 111</div>
+                <div class="rewiew_block_info blue">e-mail службы поддержки: marketing@mycredit.ua</div>
+                <div class="rewiew_block_info">номер лицензии: IK №146, регистрационный номер №16103223 от 20.10.2015</div>
+                <div class="rewiew_block_info blue">APR (годовая процентная ставка): 584%</div>
+                <div class="rewiew_block_info">Срок: от 91 до 365 дней</div>
+                <div class="rewiew_block_info blue">Пример расчета: при кредите в 1000 грн., сроком на 91 дня, сумма к оплате составит 992 грн. Ставка 1,6% в день (16 гривен в день)</div>
+            </div>
+            <div class="review_block">
+                <div class="review_block_title">Moneyveo</div>
+                <div class="rewiew_block_info blue">Адрес: 01015, г. Киев, ул. Лейпцигская, 15-Б</div>
+                <div class="rewiew_block_info">телефон службы поддержки: 0 800 21 93 93</div>
+                <div class="rewiew_block_info blue">e-mail службы поддержки: support@moneyveo.ua</div>
+                <div class="rewiew_block_info">номер лицензии: ИК №105 от 21.03.2013</div>
+                <div class="rewiew_block_info blue">APR (годовая процентная ставка): 620,5%</div>
+                <div class="rewiew_block_info">Срок: от 91 до 365 дней</div>
+                <div class="rewiew_block_info blue">Пример расчета: при кредите в 1000 грн., сроком на 91 дня, сумма к оплате составит 1054 грн. Ставка 1,7 % в день (17 гривен в день)</div>
+            </div>
+            <div class="review_block">
+                <div class="review_block_title">ШвидкоГроші</div>
+                <div class="rewiew_block_info blue">Адрес: г. Киев, ул. Саксаганского 133-А</div>
+                <div class="rewiew_block_info">телефон службы поддержки: 0 800 50 10 20</div>
+                <div class="rewiew_block_info blue">e-mail службы поддержки: info@sgroshi.com</div>
+                <div class="rewiew_block_info">номер лицензии: IK №78 от 28.04.2011</div>
+                <div class="rewiew_block_info blue">APR (годовая процентная ставка): 730%</div>
+                <div class="rewiew_block_info">Срок: от 91 до 365 дней</div>
+                <div class="rewiew_block_info blue">Пример расчета: при кредите в 1000 грн., сроком на 91 дня, сумма к оплате составит 1240 грн. Ставка 2% в день (20 гривен в день)</div>
+            </div>
+            <div class="review_block">
+                <div class="review_block_title">CC Loan</div>
+                <div class="rewiew_block_info blue">Адрес 01021,  г.Киев , ул.Кловский спуск, 7-А</div>
+                <div class="rewiew_block_info">телефон службы поддержки: +380(044)2227733</div>
+                <div class="rewiew_block_info blue">e-mail службы поддержки: help@ccloan.com.ua</div>
+                <div class="rewiew_block_info blue">APR (годовая процентная ставка): 478%</div>
+                <div class="rewiew_block_info">Срок: от 91 до 365 дней</div>
+                <div class="rewiew_block_info blue">10000 грн. На 3 месяца, комиссия 11571 грн. общие затраты на займ составляют 21571 грн. APR 478%</div>
+            </div>
+            <div class="review_block">
+                <div class="review_block_title">Dinero</div>
+                <div class="rewiew_block_info blue">Адрес: 04116, г. Киев, ул. Старокиевская, 10-Г</div>
+                <div class="rewiew_block_info">телефон службы поддержки: +380(067)3262233</div>
+                <div class="rewiew_block_info blue">e-mail службы поддержки: info@dinero.com.ua</div>
+                <div class="rewiew_block_info blue">APR (годовая процентная ставка): 142,35%</div>
+                <div class="rewiew_block_info">Срок: от 91 до 365 дней</div>
+                <div class="rewiew_block_info blue">3000 грн. на 3 месяца с продлением, комиссия 916 грн., общие затраты 3916 грн., APR  142,35%</div>
+            </div>
+            <div class="review_block">
+                <div class="review_block_title">Gofingo</div>
+                <div class="rewiew_block_info blue">Адрес: Украина, 04071, город Киев, ул. Хорива, 1А.</div>
+                <div class="rewiew_block_info">телефон службы поддержки: +380443337305</div>
+                <div class="rewiew_block_info blue">e-mail службы поддержки: info@gofingo.com.ua</div>
+                <div class="rewiew_block_info blue">APR (годовая процентная ставка): 675.25%</div>
+                <div class="rewiew_block_info">Срок: от 91 до 365 дней</div>
+                <div class="rewiew_block_info blue">Пример: при взятии 5000 грн. на 3 месяца, комиссия 8325 грн., общие затраты 13325 грн., APR 675.25%.</div>
+            </div>
+        </div>
+		<div class="wrapper boxshadow text">
+            <h2>Требования к получению онлайн кредита:</h2>
+            <div class="require">
+                <div class="require_block">
+                    <div class="image_block_require"><img src="/img/creditcard.svg" alt=""></div>
+                    <div class="text_block_require">Валидная карта любого банка Украины</div>
                 </div>
+                <div class="require_block">
+                    <div class="image_block_require"><img src="/img/passport.svg" alt=""></div>
+                    <div class="text_block_require">Гражданство Украины</div>
+                </div>
+                <div class="require_block">
+                    <div class="image_block_require"><img src="/img/adult.svg" alt=""></div>
+                    <div class="text_block_require">18+ лет</div>
+                </div>
+                <div class="require_block">
+                    <div class="image_block_require"><img src="/img/certificate.svg" alt=""></div>
+                    <div class="text_block_require">Корректно оформленная заявка</div>
+                </div>
+            </div>
+            <p>Примите во внимание, что при необходимости компании могут требовать от вас дополнительные документы:</p>
+            <p>Скан-копию паспорта и ИНН</p>
+            <p>Фотографии с паспортом/картой в руках</p>
+            <h2>ГПС (Годовая Процентная Ставка)</h2>
+            <p>Годовая процентная ставка представляет собой максимальную сумму, которую нужно заплатить заемщику за пользование средствами (измеряется в процентах). ГПС принимает во внимание процентную ставку и прочие комиссии и не учитывает скидки и акции. Чтобы упростить сравнение кредитов между собой, кредиторы сообщают свои годовые процентные ставки до подписания договора. К примеру:</p>
+            <p>Кредитор предлагает 3000 гривен на срок от 91 дней с APR 36%. Это значит ставка за один день - 0,098%. Если Вы возьмете кредит на 91 дней, то сумма к оплате составит 205,80 гривен или 6,86%</p>
+            <p>Moneta-Online сверил комиссии кредитных компаний Украины и в первую очередь пользователям показаны компании с наименьшей ГПС.</p>
+        </div>
+	</main>
+	<footer>
+			<div class="wrapper">
+				<div class="left_side_footer">Работаем круглосуточно,<br>без перерывов</div>
+				<div class="right_side_footer">
+					<p class="right_title">Контакты</p>
+					<p>help@groshiua.site</p>
+					<p>01024, ул. Пилипа Орлика, 6, Киев</p>
+				</div>
+			</div>
+			<div class="protected">
+				<img src="/img/lock.svg" alt="">
+				<img src="/img/visa.svg" alt="">
+				<img src="/img/mastercard.svg" alt="">
+			</div>
 		</footer>
-		<a class="scrollup" href="#home" style="display: none;"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
-		<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-		<script src="//use.fontawesome.com/bb1a3e6682.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script>
-			window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-		</script>
-		<script src="js/vendor/bootstrap.js"></script>
-		<script src="js/jquery.bxslider.js"></script>
-		<script src="js/plugins.js"></script>
-		<script src="js/main.js"></script>
-		<script src="index.min.js?v20180913"></script>
-	
-		<script>var user_aid = "<?php echo($aid); ?>";
-	$('a.rdr').each(function(){
-	link1st = $(this).data('href');
-	link1st = link1st.replace(/aid=[0-9]{1,9}/, 'aid='+user_aid);
-	link = link1st+"<?php echo $add_link ?>";
-	link = link.replace(/#/g,'');
-	$(this).data('href', link).attr('data-href', link);
-	});
-		</script>
-	</body>
+</body>
+<!-- <script src="/js/cookTid.js"></script> -->
+<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/jquery-touch.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/maskinput.js"></script>
 </html>

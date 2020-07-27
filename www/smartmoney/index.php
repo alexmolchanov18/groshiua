@@ -1,7 +1,5 @@
 <?php
-	
-	header("Location: https://groshiua.site/");
-
+	header("Location: /");
     require_once(__DIR__.'/api/init.php');
 
     $isDebug = false;
