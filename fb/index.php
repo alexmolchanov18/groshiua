@@ -12,21 +12,21 @@
 	<!-- Facebook Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  {if(f.fb_test_tsq)return;n=f.fb_test_tsq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  if(!f._fb_test_tsq)f._fb_test_tsq=n;n.push=n;n.loaded=!0;n.version='2.0';
   n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '225196278198377');
-  fbq('track', 'PageView');
+  'https://connect.facebook.net/en_US/fb_test_tsevents.js');
+  fb_test_tsq('init', '225196278198377');
+  fb_test_tsq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=225196278198377&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->         
-        <script>window.searchUrl = 'https://tinyurl.com/y57ye4op';</script>
+        <script>window.searchUrl = 'https://tinyurl.com/sh8oyo8';</script>
 		<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -60,7 +60,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</header>
 	<main>
 		<div class="entry-content">
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" class="offer yellow">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb_test_ts" class="offer yellow">
 				<div class="offer_logo">
 					<img src="/img/schvidko.jpeg" alt="">
 					<div class="star_block">
@@ -89,7 +89,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" class="offer yellow">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb_test_ts" class="offer yellow">
 				<div class="offer_logo">
 					<img src="/img/miloan.svg" alt="">
 					<div class="star_block">
@@ -118,7 +118,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1261?aid=63223&source=fb" class="offer green">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1261?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/mycredit.png" alt="">
 					<div class="star_block">
@@ -147,7 +147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" class="offer yellow">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb_test_ts" class="offer yellow">
 				<div class="offer_logo">
 					<img src="/img/schvidko.jpeg" alt="">
 					<div class="star_block">
@@ -176,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1986?aid=63223&source=fb" class="offer green">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1986?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/CCLoan.png" alt="">
 					<div class="star_block">
@@ -205,7 +205,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" class="offer yellow">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb_test_ts" class="offer yellow">
 				<div class="offer_logo">
 					<img src="/img/miloan.svg" alt="">
 					<div class="star_block">
@@ -234,7 +234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1960?aid=63223&source=fb" class="offer yellow">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1960?aid=63223&source=fb_test_ts" class="offer yellow">
 				<div class="offer_logo">
 					<img src="/img/gofingo.png" alt="">
 					<div class="star_block">
@@ -263,7 +263,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1509?aid=63223&source=fb" class="offer yellow">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1509?aid=63223&source=fb_test_ts" class="offer yellow">
 				<div class="offer_logo">
 					<img src="/img/alexcredit.png" alt="">
 					<div class="star_block">
@@ -292,7 +292,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1712?aid=63223&source=fb" class="offer green">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1712?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/mazila.jpg" alt="">
 					<div class="star_block">
@@ -321,7 +321,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb" class="offer yellow">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1272?aid=63223&source=fb_test_ts" class="offer yellow">
 				<div class="offer_logo">
 					<img src="/img/schvidko.jpeg" alt="">
 					<div class="star_block">
@@ -355,7 +355,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			
 			
 			
-			<!-- <a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1914?aid=63223&source=fb" class="offer green">
+			<!-- <a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1914?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/monetka.svg" alt="">
 					<div class="star_block">
@@ -384,7 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a> -->
-			<!-- <a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/2184?aid=63223&source=fb" class="offer green">
+			<!-- <a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/2184?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/zecredit.png" alt="">
 					<div class="star_block">
@@ -414,7 +414,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="offer_button">Получить деньги</div>
 			</a>
 			
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1712?aid=63223&source=fb" class="offer green">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1712?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/mazila.jpg" alt="">
 					<div class="star_block">
@@ -444,7 +444,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="offer_button">Получить деньги</div>
 			</a> -->
 			
-			<!-- <a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/250?aid=63223&source=fb" class="offer green">
+			<!-- <a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/250?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/moneyveo.svg" alt="">
 					<div class="star_block">
@@ -473,7 +473,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/2433?aid=63223&source=fb" class="offer green">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/2433?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/mistercash.svg" alt="">
 					<div class="star_block">
@@ -502,7 +502,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb" class="offer yellow">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1436?aid=63223&source=fb_test_ts" class="offer yellow">
 				<div class="offer_logo">
 					<img src="/img/miloan.svg" alt="">
 					<div class="star_block">
@@ -531,7 +531,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<div class="offer_button">Получить деньги</div>
 			</a>
-			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1986?aid=63223&source=fb" class="offer green">
+			<a target="_blank" rel="nofollow noopener noreferrer" href="https://go.salesdoubler.net/in/offer/1986?aid=63223&source=fb_test_ts" class="offer green">
 				<div class="offer_logo">
 					<img src="/img/CCLoan.png" alt="">
 					<div class="star_block">
@@ -695,11 +695,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="/js/jquery-ui.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/maskinput.js"></script>
-<script src="/index.min.js?v20180913"></script>
 <script>
 	$(function(){
 		$("a.offer").click(function(){
-			fbq('track', 'Lead');
+			fb_test_tsq('track', 'Lead');
 		});
 	});
 		
